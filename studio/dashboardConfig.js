@@ -4,7 +4,17 @@ export default {
       name: 'sanity-tutorials',
       options: {
         templateRepoId: 'sanity-io/sanity-template-gatsby-portfolio'
-      }
+      },
+    },
+    {
+      name: "gatsby",
+      options: {
+        instances: [
+          {
+            instanceUrl: "<previewInstanceUrl>",
+          },
+        ],
+      },
     },
     {name: 'structure-menu'},
     {

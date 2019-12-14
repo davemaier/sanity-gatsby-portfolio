@@ -1,0 +1,69 @@
+Arguments: 
+  /usr/bin/node /usr/lib/node_modules/@sanity/cli/vendor/yarn install --json --non-interactive --ignore-engines --registry https://registry.npmjs.org
+
+PATH: 
+  /home/david/Documents/flowdim-hp/gatsby-playground/sanity-gatsby-portfolio/studio/node_modules/.bin:/home/david/Documents/flowdim-hp/gatsby-playground/sanity-gatsby-portfolio/node_modules/.bin:/home/david/Documents/flowdim-hp/gatsby-playground/node_modules/.bin:/home/david/Documents/flowdim-hp/node_modules/.bin:/home/david/Documents/node_modules/.bin:/home/david/node_modules/.bin:/home/node_modules/.bin:/node_modules/.bin:/usr/bin:/usr/lib/node_modules/vendor:/home/david/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/var/lib/snapd/snap/bin
+
+Yarn version: 
+  1.6.0
+
+Node version: 
+  12.13.0
+
+Platform: 
+  linux x64
+
+Trace: 
+  Error: https://registry.npmjs.org/sanity-plugin-dashboard-widget-netlify/-/sanity-plugin-dashboard-widget-netlify-1.0.1.tgz: unexpected end of file
+      at Zlib.zlibOnError [as onerror] (zlib.js:170:17)
+
+npm manifest: 
+  {
+    "private": true,
+    "name": "sanity-gatsby-portfolio-studio",
+    "version": "1.0.1",
+    "main": "package.json",
+    "author": "Sanity <hello@sanity.io>",
+    "scripts": {
+      "dev": "sanity start",
+      "format": "prettier-eslint --write \"**/*.js\" \"!node_modules/**\"",
+      "build": "sanity build",
+      "graphql-deploy": "sanity graphql deploy --playground",
+      "lint": "eslint .",
+      "test": "sanity check"
+    },
+    "dependencies": {
+      "@sanity/base": "^0.144",
+      "@sanity/cli": "^0.144",
+      "@sanity/components": "^0.144",
+      "@sanity/core": "^0.144",
+      "@sanity/dashboard": "^0.144",
+      "@sanity/default-layout": "^0.144",
+      "@sanity/default-login": "^0.144",
+      "@sanity/desk-tool": "^0.144",
+      "date-fns": "^1.30.1",
+      "prop-types": "^15.7.2",
+      "react": "^16.8.6",
+      "react-dom": "^16.8.6",
+      "sanity-plugin-dashboard-widget-document-list": "^0.0.8",
+      "sanity-plugin-dashboard-widget-netlify": "^1.0.1"
+    },
+    "devDependencies": {
+      "babel-eslint": "^10.0.1",
+      "eslint": "^5.16.0",
+      "eslint-config-standard": "^12.0.0",
+      "eslint-config-standard-react": "^7.0.2",
+      "eslint-plugin-import": "^2.17.2",
+      "eslint-plugin-node": "^9.0.1",
+      "eslint-plugin-promise": "^4.1.1",
+      "eslint-plugin-react": "^7.13.0",
+      "eslint-plugin-standard": "^4.0.0",
+      "prettier-eslint-cli": "^5.0.0"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
