@@ -11,7 +11,7 @@ export default {
       options: {
         instances: [
           {
-            instanceUrl: "<previewInstanceUrl>",
+            instanceUrl: "https://sanity-gatsby-portfolio-3326742121.gtsb.io",
           },
         ],
       },
