@@ -6,16 +6,6 @@ export default {
         templateRepoId: 'sanity-io/sanity-template-gatsby-portfolio'
       },
     },
-    {
-      name: "gatsby",
-      options: {
-        instances: [
-          {
-            instanceUrl: "https://sanity-gatsby-portfolio-3326742121.gtsb.io",
-          },
-        ],
-      },
-    },
     {name: 'structure-menu'},
     {
       name: 'project-info',

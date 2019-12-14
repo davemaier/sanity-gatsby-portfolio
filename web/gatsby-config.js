@@ -20,6 +20,7 @@ module.exports = {
         watchMode: !isProd,
         overlayDrafts: !isProd && token
       }
-    }
+    },
+    'gatsby-plugin-offline'
   ]
 }
