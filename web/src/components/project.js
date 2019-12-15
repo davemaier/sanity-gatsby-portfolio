@@ -6,6 +6,7 @@ import {imageUrlFor} from '../lib/image-url'
 import BlockContent from './block-content'
 import Container from './container'
 import RoleList from './role-list'
+import Img from 'gatsby-image'
 
 import styles from './project.module.css'
 
