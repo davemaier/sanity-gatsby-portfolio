@@ -1,23 +1,42 @@
 import React from 'react'
+import { getFluidGatsbyImage } from 'gatsby-source-sanity/lib-es5'
+import Img from 'gatsby-image'
 
 
-const Hero = ({title, subTitle}) => (
+import styles from './hero.module.scss'
 
-    <section className="hero is-primary">
-        <div className="hero-body">
-            <div className="container">
 
-                <h1 className="title">
-                    {title}
-                </h1>
+const Hero = ({ title, subTitle, image }) => {
 
-                <h2 className="subtitle">
-                    {subTitle}
-                </h2>
+    const sanityConfig = { projectId: 'yhql8ehe', dataset: 'production' }
+    console.log(styles)
+    return (
+        <div>
+            <section className={"hero is-large is-primary " + styles.hasBackground}>
+            
+            <Img className={styles.background}
+                    fluid={getFluidGatsbyImage(image, { width: 1024 }, sanityConfig)}
+                    alt={image.alt}
 
-            </div>
+                    //override default style of gatsby-image plugin
+                    style={{position: "absolute"}}
+                />
+                <div className="hero-body">
+                    <div className="container">
+
+                        <h1 className="title">
+                            {title}
+                        </h1>
+
+                        <h2 className="subtitle">
+                            {subTitle}
+                        </h2>
+                    </div>
+                </div>
+                
+            </section>
         </div>
-    </section>
-)
+    )
+};
 
 export default Hero

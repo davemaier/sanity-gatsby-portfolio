@@ -22,6 +22,28 @@ export const query = graphql`
       id
       heroTitle
       heroSubtitle
+      heroImage {
+        crop {
+          _key
+          _type
+          top
+          bottom
+          left
+          right
+        }
+        hotspot {
+          _key
+          _type
+          x
+          y
+          height
+          width
+        }
+        asset {
+          _id
+        }
+        alt
+      }
     }
     projects: allSanitySampleProject(
       limit: 6
@@ -90,12 +112,13 @@ const IndexPage = props => {
 
   const frontPage = (data || {}).frontPage
 
+  console.log(frontPage)
 
   return (
     <Layout>
       <SEO title={site.title} description={site.description} keywords={site.keywords} />
       
-        <Hero title={frontPage.heroTitle} subTitle={frontPage.heroSubtitle}></Hero>
+        <Hero title={frontPage.heroTitle} subTitle={frontPage.heroSubtitle} image={frontPage.heroImage}></Hero>
 
         
 
