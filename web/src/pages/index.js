@@ -5,11 +5,11 @@ import {
   filterOutDocsWithoutSlugs,
   filterOutDocsPublishedInTheFuture
 } from '../lib/helpers'
-import Container from '../components/container'
 import GraphQLErrorList from '../components/graphql-error-list'
-import ProjectPreviewGrid from '../components/project-preview-grid'
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
+import Contact from '../components/contact'
+import Hero from '../components/hero'
 
 export const query = graphql`
   query IndexPageQuery {
@@ -17,6 +17,11 @@ export const query = graphql`
       title
       description
       keywords
+    }
+    frontPage: sanityFrontPage {
+      id
+      heroTitle
+      heroSubtitle
     }
     projects: allSanitySampleProject(
       limit: 6
@@ -83,19 +88,18 @@ const IndexPage = props => {
     )
   }
 
+  const frontPage = (data || {}).frontPage
+
   return (
     <Layout>
       <SEO title={site.title} description={site.description} keywords={site.keywords} />
-      <Container>
-        <h1 hidden>Welcome to {site.title}</h1>
-        {projectNodes && (
-          <ProjectPreviewGrid
-            title='Latest projects'
-            nodes={projectNodes}
-            browseMoreHref='/archive/'
-          />
-        )}
-      </Container>
+      
+        <Hero title={frontPage.title} subTitle={frontPage.subTitle}></Hero>
+
+        
+
+        <Contact></Contact>
+      
     </Layout>
   )
 }

@@ -4,29 +4,27 @@ import {Link} from 'gatsby'
 import {buildImageObj} from '../lib/helpers'
 import {imageUrlFor} from '../lib/image-url'
 import BlockContent from './block-content'
-import Container from './container'
+
 import RoleList from './role-list'
 import Img from 'gatsby-image'
 
+
 import styles from './project.module.css'
+import { getFluidGatsbyImage } from 'gatsby-source-sanity/lib-es5'
 
 function Project (props) {
+  const sanityConfig = {projectId: 'yhql8ehe', dataset: 'production'}
   const {_rawBody, title, categories, mainImage, members, publishedAt, relatedProjects} = props
   return (
     <article className={styles.root}>
       {props.mainImage && mainImage.asset && (
         <div className={styles.mainImage}>
-          <img
-            src={imageUrlFor(buildImageObj(mainImage))
-              .width(1200)
-              .height(Math.floor((9 / 16) * 1200))
-              .fit('crop')
-              .url()}
+          <Img
+            fluid={getFluidGatsbyImage(mainImage, {width: 1024}, sanityConfig)}
             alt={mainImage.alt}
           />
         </div>
       )}
-      <Container>
         <div className={styles.grid}>
           <div className={styles.mainContent}>
             <h1 className={styles.title}>{title}</h1>
@@ -69,7 +67,6 @@ function Project (props) {
             )}
           </aside>
         </div>
-      </Container>
     </article>
   )
 }

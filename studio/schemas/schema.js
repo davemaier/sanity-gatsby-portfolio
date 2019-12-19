@@ -9,6 +9,7 @@ import category from './documents/category'
 import person from './documents/person'
 import sampleProject from './documents/sampleProject'
 import siteSettings from './documents/siteSettings'
+import frontPage from './documents/frontPage'
 
 // Object types
 import bioPortableText from './objects/bioPortableText'
@@ -31,11 +32,13 @@ export default createSchema({
     projectMember,
     projectPortableText,
     simplePortableText,
+    
     // The following are document types which will appear
     // in the studio.
     category,
     person,
     sampleProject,
-    siteSettings
+    siteSettings,
+    frontPage
   ])
 })
