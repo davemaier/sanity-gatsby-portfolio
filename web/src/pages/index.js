@@ -88,13 +88,13 @@ const IndexPage = props => {
     )
   }
 
-  const frontPage = (data || {}).frontPage
 
+  console.log(frontPage)
   return (
     <Layout>
       <SEO title={site.title} description={site.description} keywords={site.keywords} />
       
-        <Hero title={frontPage.title} subTitle={frontPage.subTitle}></Hero>
+        <Hero title={frontPage.heroTitle} subTitle={frontPage.heroSubtitle}></Hero>
 
         
 
