@@ -4,9 +4,11 @@ const Contact = ({children}) => (
     
     <div>
         <a name="contact"></a>
-        <p>
-            Contact
-        </p>
+        <h2>
+            Let's talk about your project!
+
+            Ta
+        </h2>
     </div>
 );
 

@@ -26,11 +26,9 @@ class Header extends React.Component {
     const burgerActive = this.state.showMenu ? 'is-active' : '';
     
     return (
-      <nav className="navbar">
+      <nav className="navbar is-fixed-top" style={{maxWidth: "1024px", marginLeft: "auto", marginRight: "auto"}}>
         <div className="navbar-brand">
-          <Link className="navbar-item" to="/">
-            <img src="https://bulma.io/images/bulma-logo.png" style={{ width: '88px' }} alt="" />
-          </Link>
+          
           <div className={`navbar-burger burger ${burgerActive}`} onClick={this.toggleMenu}>
             <span></span>
             <span></span>
@@ -40,15 +38,16 @@ class Header extends React.Component {
 
         <div className={`navbar-menu ${menuActive}`} >
           <div className="navbar-end">
-            <a className="navbar-link" onClick={this.menuClickContact}>
+            <a className="navbar-item" onClick={this.menuClickContact}>
               Contact
             </a>
-            <Link className="navbar-link" to="/archive" onClick={this.toggleMenu}>
+            <Link className="navbar-item" to="/archive" onClick={this.toggleMenu}>
               Blog
-      </Link>
-            <Link className="navbar-link" to="/contact" onClick={this.toggleMenu}>
+            </Link>
+
+            <Link className="navbar-item" to="/contact" onClick={this.toggleMenu}>
               Contact
-      </Link>
+            </Link>
           </div>
         </div>
       </nav>)
