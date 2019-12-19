@@ -88,8 +88,9 @@ const IndexPage = props => {
     )
   }
 
+  const frontPage = (data || {}).frontPage
 
-  console.log(frontPage)
+
   return (
     <Layout>
       <SEO title={site.title} description={site.description} keywords={site.keywords} />
