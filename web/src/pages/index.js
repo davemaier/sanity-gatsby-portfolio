@@ -18,7 +18,7 @@ export const query = graphql`
       description
       keywords
     }
-    frontPage: sanityFrontPage {
+    frontPage: sanityFrontPage(_id: {regex: "/(drafts.|)sanityFrontPage/"}) {
       id
       heroTitle
       heroSubtitle
