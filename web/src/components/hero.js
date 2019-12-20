@@ -24,11 +24,11 @@ const Hero = ({ title, subTitle, image }) => {
                 <div className="hero-body">
                     <div className="container">
 
-                        <h1 className="title is-size-1-desktop">
+                        <h1 className="title is-size-1-desktop is-family-monospace">
                             {title}
                         </h1>
 
-                        <h2 className="subtitle is-size-2-desktop">
+                        <h2 className="subtitle is-size-2-desktop is-family-monospace">
                             {subTitle}
                         </h2>
                     </div>

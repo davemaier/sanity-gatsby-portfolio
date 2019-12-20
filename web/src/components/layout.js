@@ -6,7 +6,7 @@ import styles from './layout.module.css'
 
 const Layout = ({children, onHideNav, onShowNav, showNav, siteTitle}) => (
   <>
-    {/* <div style={{minHeight:"4rem"}}></div> */}
+    <div style={{minHeight:"4rem"}}></div>
     <Header/>
     
     <div className={styles.content}>{children}</div>
