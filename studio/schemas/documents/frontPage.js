@@ -15,14 +15,30 @@ export default {
         title: 'Hero Title'
       },
       {
-        name: 'heroSubtitle',
+        name: 'heroSubtitle1',
         type: 'string',
-        title: 'Hero Subtitle'
+        title: 'Hero Subtitle 1'
+      },
+      {
+        name: 'heroSubtitle2',
+        type: 'string',
+        title: 'Hero Subtitle 2'
       },
       {
         name: 'heroImage',
         title: 'Hero image',
         type: 'figure'
+      },
+      {
+        title: "Info Head",
+        name: "headItem",
+        type: "infoItem"
+      },
+      {
+        title: "Info Items",
+        name: "infoItems",
+        type: "array",
+        of: [{type: "infoItem"}]
       }
     ]
   }

@@ -1,41 +1,51 @@
 import React from 'react'
 import { getFluidGatsbyImage } from 'gatsby-source-sanity/lib-es5'
 import Img from 'gatsby-image'
+import clientConfig from '../../client-config'
+import styled from "@emotion/styled"
+import { css } from "@emotion/core"
+
+const HeroWrapper = styled.section({
+    position: 'relative',
+    overflow: 'hidden',
+})
+
+const backgroundImage = {
+    position: 'absolute',
+    objectFit: 'cover',
+    objectPosition: 'center center',
+    width: '100%',
+    height: '100%',
+}
 
 
-import styles from './hero.module.scss'
+const Hero = ({ title, subTitle1, subTitle2, image }) => {
 
-
-const Hero = ({ title, subTitle, image }) => {
-
-    const sanityConfig = { projectId: 'yhql8ehe', dataset: 'production' }
-    console.log(styles)
     return (
-        <div>
-            <section className={"hero is-large is-primary " + styles.hasBackground}>
+        
+            <HeroWrapper className="hero is-large is-primary">
             
-            <Img className={styles.background}
-                    fluid={getFluidGatsbyImage(image, { width: 1024 }, sanityConfig)}
+            <Img    fluid={getFluidGatsbyImage(image, { width: 1920 }, clientConfig.sanity)}
                     alt={image.alt}
+                    style={backgroundImage}/>
 
-                    //override default style of gatsby-image plugin
-                    style={{position: "absolute"}}
-                />
                 <div className="hero-body">
                     <div className="container">
 
-                        <h1 className="title is-size-1-desktop is-family-monospace">
+                        <h1 className="title has-text-grey-darker is-size-2-desktop is-family-monospace">
                             {title}
                         </h1>
 
-                        <h2 className="subtitle is-size-2-desktop is-family-monospace">
-                            {subTitle}
+                        <h2 className="subtitle has-text-grey-darker is-size-3-desktop is-family-monospace">
+                            {subTitle1} <br/>
+                            {subTitle2}
+                            
                         </h2>
                     </div>
                 </div>
                 
-            </section>
-        </div>
+            </HeroWrapper>
+        
     )
 };
 

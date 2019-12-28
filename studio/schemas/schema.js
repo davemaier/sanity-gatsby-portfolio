@@ -6,17 +6,16 @@ import schemaTypes from 'all:part:@sanity/base/schema-type'
 
 // Document types
 import category from './documents/category'
-import person from './documents/person'
-import sampleProject from './documents/sampleProject'
 import siteSettings from './documents/siteSettings'
 import frontPage from './documents/frontPage'
 
 // Object types
 import bioPortableText from './objects/bioPortableText'
 import figure from './objects/figure'
-import projectMember from './objects/projectMember'
-import projectPortableText from './objects/projectPortableText'
-import simplePortableText from './objects/simplePortableText'
+import bodyPortableText from './objects/bodyPortableText'
+import post from './documents/post'
+import infoItem from './objects/infoItem'
+import excerptPortableText from './objects/excerptPortableText'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -29,16 +28,16 @@ export default createSchema({
     // { type: 'typename' } in other document schemas
     bioPortableText,
     figure,
-    projectMember,
-    projectPortableText,
-    simplePortableText,
+    bodyPortableText,
+    excerptPortableText,
+    infoItem,
     
     // The following are document types which will appear
     // in the studio.
     category,
-    person,
-    sampleProject,
+    post,
     siteSettings,
-    frontPage
+    frontPage,
+    
   ])
 })

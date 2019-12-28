@@ -1,9 +1,47 @@
 
 
+@import "~bulma/sass/utilities/initial-variables.sass";
+
+
 $navbar-height: 4rem;
 
 $size-1: 5rem;
 
 $family-monospace: 'IBM Plex Mono';
 
+$navbar-background-color: transparent;
+$navbar-breakpoint: $tablet;
+$navbar-item-hover-color: #000;
+
 @import '~bulma/bulma.sass';
+
+
+html{
+    background-color:#FAFAFA;
+}
+
+
+
+.is-rounded {
+    border-radius: 50%;
+}
+
+.is-elevated-1 {
+    box-shadow: 0 1px 3px hsla(0,0%,.2,.3);
+}
+
+.is-elevated-2 {
+    box-shadow: 0 4px 6px hsla(0, 0%,.2,.3);
+}
+
+.is-elevated-3 {
+    box-shadow: 0 5px 15px hsla(0, 0%,.2,.3);
+}
+
+.is-elevated-4 {
+    box-shadow: 0 10px 24px hsla(0, 0%,.2,.3);
+}
+
+.is-elevated-5 {
+    box-shadow: 0 15px 35px hsl(0, 0%,.2);
+}

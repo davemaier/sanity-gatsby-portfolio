@@ -10,6 +10,7 @@ import SEO from '../components/seo'
 import Layout from '../containers/layout'
 import Contact from '../components/contact'
 import Hero from '../components/hero'
+import Info from '../components/info'
 
 export const query = graphql`
   query IndexPageQuery {
@@ -21,7 +22,8 @@ export const query = graphql`
     frontPage: sanityFrontPage(_id: {regex: "/(drafts.|)frontPage/"}) {
       id
       heroTitle
-      heroSubtitle
+      heroSubtitle1
+      heroSubtitle2
       heroImage {
         crop {
           _key
@@ -44,45 +46,34 @@ export const query = graphql`
         }
         alt
       }
-    }
-    projects: allSanitySampleProject(
-      limit: 6
-      sort: {fields: [publishedAt], order: DESC}
-      filter: {slug: {current: {ne: null}}, publishedAt: {ne: null}}
-    ) {
-      edges {
-        node {
-          id
-          mainImage {
-            crop {
-              _key
-              _type
-              top
-              bottom
-              left
-              right
-            }
-            hotspot {
-              _key
-              _type
-              x
-              y
-              height
-              width
-            }
-            asset {
-              _id
-            }
-            alt
+      headItem {
+        
+        image {
+          crop {
+            _key
+            _type
+            top
+            bottom
+            left
+            right
           }
-          title
-          _rawExcerpt
-          slug {
-            current
+          hotspot {
+            _key
+            _type
+            x
+            y
+            height
+            width
           }
+          asset {
+            _id
+          }
+          alt
         }
       }
+      _rawInfoItems(resolveReferences: {maxDepth: 10})
     }
+     
   }
 `
 
@@ -98,11 +89,7 @@ const IndexPage = props => {
   }
 
   const site = (data || {}).site
-  const projectNodes = (data || {}).projects
-    ? mapEdgesToNodes(data.projects)
-      .filter(filterOutDocsWithoutSlugs)
-      .filter(filterOutDocsPublishedInTheFuture)
-    : []
+  
 
   if (!site) {
     throw new Error(
@@ -118,8 +105,9 @@ const IndexPage = props => {
     <Layout>
       <SEO title={site.title} description={site.description} keywords={site.keywords} />
       
-        <Hero title={frontPage.heroTitle} subTitle={frontPage.heroSubtitle} image={frontPage.heroImage}></Hero>
+        <Hero title={frontPage.heroTitle} subTitle1={frontPage.heroSubtitle1} subTitle2={frontPage.heroSubtitle2} image={frontPage.heroImage}></Hero>
 
+        <Info infoItems={frontPage._rawInfoItems} headItem ={frontPage.headItem}></Info>
         
 
         <Contact></Contact>
