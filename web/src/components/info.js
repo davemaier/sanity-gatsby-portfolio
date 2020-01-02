@@ -1,5 +1,4 @@
 import React from 'react';
-import style from './info.module.scss';
 import InfoItem from './info-item';
 
 const Info = ({headItem, infoItems}) => {

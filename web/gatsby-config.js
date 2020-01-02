@@ -22,7 +22,6 @@ module.exports = {
         overlayDrafts: !isProd && token
       }
     },
-    'gatsby-plugin-offline',
     {
       resolve: `gatsby-plugin-prefetch-google-fonts`,
       options: {

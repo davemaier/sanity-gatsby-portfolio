@@ -1,10 +1,6 @@
 import React from 'react'
 import {graphql} from 'gatsby'
-import {
-  mapEdgesToNodes,
-  filterOutDocsWithoutSlugs,
-  filterOutDocsPublishedInTheFuture
-} from '../lib/helpers'
+
 import GraphQLErrorList from '../components/graphql-error-list'
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
@@ -14,13 +10,14 @@ import Info from '../components/info'
 
 export const query = graphql`
   query IndexPageQuery {
-    site: sanitySiteSettings(_id: {regex: "/(drafts.|)siteSettings/"}) {
+
+    site: sanitySiteSettings {
+      id
       title
-      description
       keywords
     }
-    frontPage: sanityFrontPage(_id: {regex: "/(drafts.|)frontPage/"}) {
-      id
+    frontPage: sanityFrontPage {
+      
       heroTitle
       heroSubtitle1
       heroSubtitle2
@@ -46,34 +43,9 @@ export const query = graphql`
         }
         alt
       }
-      headItem {
-        
-        image {
-          crop {
-            _key
-            _type
-            top
-            bottom
-            left
-            right
-          }
-          hotspot {
-            _key
-            _type
-            x
-            y
-            height
-            width
-          }
-          asset {
-            _id
-          }
-          alt
-        }
-      }
+      
       _rawInfoItems(resolveReferences: {maxDepth: 10})
     }
-     
   }
 `
 
