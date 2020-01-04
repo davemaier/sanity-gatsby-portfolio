@@ -11,17 +11,31 @@ const Contact = ({ children }) => (
             </h2>
 
             <div>
-                <form name="Contact Form" method="POST" data-netlify="true">
-                    <input type="hidden" name="form-name" value="Contact Form" />
-                    <div>
-                        <label>Your Email:</label>
-                        <input type="email" name="email" />
+                <form className="has-text-left" name="Contact Form" method="POST" data-netlify="true">
+
+                    <input className="input" type="hidden" name="form-name" value="Contact Form" />
+
+                    <div className="field">
+
+                        <label className="label">Your Email:</label>
+                        <div className="control">
+                            <input className="input" type="email" name="email" />
+                        </div>
                     </div>
-                    <div>
-                        <label>Message:</label>
-                        <textarea name="message" />
+
+                    <div className="field">
+
+                        <label className="label">Message:</label>
+                        <div className="control">
+                            <textarea className="textarea" name="message" />
+                        </div>
                     </div>
-                    <button type="submit">Send</button>
+                    <div class="field is-grouped">
+                        <div class="control">
+                            <button className="button is-link" type="submit">Send</button>
+                        </div>
+                    </div>
+                    
                 </form>
             </div>
 
