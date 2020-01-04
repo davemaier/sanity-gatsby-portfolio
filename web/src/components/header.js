@@ -53,11 +53,11 @@ class Header extends React.Component {
           
           <div className="navbar-start">
             
-            <Link className="navbar-item is-size-4 is-family-monospace has-text-weight-semibold	" to="/archive" onClick={this.toggleMenu}>
+            <Link className="navbar-item is-size-4 is-family-monospace has-text-weight-semibold	" to="/" onClick={this.toggleMenu}>
               Home
             </Link>
 
-            <Link className="navbar-item is-size-4 is-family-monospace has-text-weight-semibold	" to="/contact" onClick={this.toggleMenu}>
+            <Link className="navbar-item is-size-4 is-family-monospace has-text-weight-semibold	" to="/blog" onClick={this.toggleMenu}>
               Blog
             </Link>
             <a className="navbar-item is-size-4 is-family-monospace has-text-weight-semibold	" onClick={this.menuClickContact}>
