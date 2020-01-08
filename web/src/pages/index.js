@@ -29,15 +29,15 @@ export const query = graphql`
           bottom
           left
           right
-        }
+          }
         hotspot {
           _key
           _type
-          x
+          x 
           y
           height
           width
-        }
+          }
         asset {
           _id
         }

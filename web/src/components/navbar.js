@@ -57,9 +57,9 @@ class Header extends React.Component {
               Home
             </Link>
 
-            <Link className="navbar-item is-size-4 is-family-monospace has-text-weight-semibold	" to="/blog" onClick={this.toggleMenu}>
+            {/* <Link className="navbar-item is-size-4 is-family-monospace has-text-weight-semibold	" to="/blog" onClick={this.toggleMenu}>
               Blog
-            </Link>
+            </Link> */}
             <a className="navbar-item is-size-4 is-family-monospace has-text-weight-semibold	" onClick={this.menuClickContact}>
               Contact
             </a>

@@ -8,10 +8,13 @@ $navbar-height: 4rem;
 $size-1: 5rem;
 
 $family-monospace: 'IBM Plex Mono';
+$family-sans-serif: 'IBM Plex Sans';
 
 $navbar-background-color: transparent;
 $navbar-breakpoint: $tablet;
-$navbar-item-hover-color: #000;
+$navbar-item-hover-color: hsl(0, 0%, 0%);
+
+$primary: hsl(180, 18%, 82%);
 
 @import '~bulma/bulma.sass';
 

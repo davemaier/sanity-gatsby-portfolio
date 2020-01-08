@@ -10,7 +10,9 @@ const HeroWrapper = styled.section({
     overflow: 'hidden',
 })
 
-const backgroundImage = {
+
+
+const heroImageStyle = {
     position: 'absolute',
     objectFit: 'cover',
     objectPosition: 'center center',
@@ -25,9 +27,7 @@ const Hero = ({ title, subTitle1, subTitle2, image }) => {
         
             <HeroWrapper className="hero is-large is-primary">
             
-            <Img    fluid={getFluidGatsbyImage(image, { width: 1920 }, clientConfig.sanity)}
-                    alt={image.alt}
-                    style={backgroundImage}/>
+            <Img fluid={getFluidGatsbyImage(image, {maxWidth: 1024}, clientConfig.sanity)} alt={image.alt} style={heroImageStyle}/>
 
                 <div className="hero-body">
                     <div className="container">
