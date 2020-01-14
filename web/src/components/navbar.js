@@ -1,20 +1,37 @@
 import { Link } from 'gatsby'
 import React from 'react'
 import { navigate } from '@reach/router'
+import scrollTo from 'gatsby-plugin-smoothscroll';
 
 
 import styled from "@emotion/styled"
 import { css } from "@emotion/core"
 
 
-const Navbar = styled.nav`
-  position: absolute; 
-  margin-left: auto; 
-  margin-right: auto;
-  left:0; 
-  right:0; 
-  max-width: 200px;
-`
+const Navbar = styled.nav({
+  position: 'absolute',
+  width: '100%',
+  
+  '@media screen and (max-width: 769px)': {
+    backgroundColor: "hsl(180, 18%, 82%)",
+    position:'relative',
+  }
+
+})
+
+const NavbarMenu = styled.div({
+  justifyContent: 'center'
+})  
+
+const NavbarStart = styled.div({
+  marginRight: 'unset'
+})
+
+
+const Burger = styled.div({
+  marginRight: '0',
+	marginLeft: 'auto',
+})
 
 class Header extends React.Component {
 
@@ -23,7 +40,7 @@ class Header extends React.Component {
   
 
   menuClickContact = () => {
-    navigate("/#contact")
+    scrollTo('#contact')
   }
 
   toggleMenu = () => {
@@ -38,21 +55,19 @@ class Header extends React.Component {
     const burgerActive = this.state.showMenu ? 'is-active' : '';
     
     return (
-      <Navbar className={`navbar is-transparent`} >
+      <Navbar className={`navbar`} >
         <div className="navbar-brand">
-
-        
-          <div className={`navbar-burger burger ${burgerActive}`} onClick={this.toggleMenu}>
+        <Burger className={`navbar-burger burger ${burgerActive}`} onClick={this.toggleMenu}>
             <span></span>
             <span></span>
             <span></span>
-          </div>
+          </Burger>
         </div>
 
-        <div className={`navbar-menu ${menuActive}`} >
+        <NavbarMenu className={`navbar-menu ${menuActive}`} >
           
-          <div className="navbar-start">
-            
+          <NavbarStart className="navbar-start">
+
             <Link className="navbar-item is-size-4 is-family-monospace has-text-weight-semibold	" to="/" onClick={this.toggleMenu}>
               Home
             </Link>
@@ -63,9 +78,13 @@ class Header extends React.Component {
             <a className="navbar-item is-size-4 is-family-monospace has-text-weight-semibold	" onClick={this.menuClickContact}>
               Contact
             </a>
-          </div>
+
+           
+          </NavbarStart>
+
           
-        </div>
+          
+        </NavbarMenu>
       </Navbar>)
   }
 };

@@ -1,9 +1,7 @@
 import React from 'react'
-import { getFluidGatsbyImage } from 'gatsby-source-sanity/lib-es5'
-import Img from 'gatsby-image'
-import clientConfig from '../../client-config'
 import styled from "@emotion/styled"
-import { css } from "@emotion/core"
+import {buildImageObj} from '../lib/helpers'
+import {imageUrlFor} from '../lib/image-url'
 
 const HeroWrapper = styled.section({
     position: 'relative',
@@ -12,13 +10,17 @@ const HeroWrapper = styled.section({
 
 
 
-const heroImageStyle = {
+const HeroImage = styled.img({
     position: 'absolute',
     objectFit: 'cover',
     objectPosition: 'center center',
     width: '100%',
     height: '100%',
-}
+
+    '@media screen and (max-width: 769px)': {
+        display: "none",
+    }
+})
 
 
 const Hero = ({ title, subTitle1, subTitle2, image }) => {
@@ -27,7 +29,14 @@ const Hero = ({ title, subTitle1, subTitle2, image }) => {
         
             <HeroWrapper className="hero is-large is-primary">
             
-            <Img fluid={getFluidGatsbyImage(image, {maxWidth: 1024}, clientConfig.sanity)} alt={image.alt} style={heroImageStyle}/>
+
+
+            <HeroImage src={imageUrlFor(buildImageObj(image))
+              .width(1920)
+              .height(Math.floor((9 / 16) * 1920))
+              .fit('crop')
+              .auto('format')
+              .url()} alt={image.alt} />
 
                 <div className="hero-body">
                     <div className="container">

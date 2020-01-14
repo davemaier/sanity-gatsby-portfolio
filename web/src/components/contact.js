@@ -18,7 +18,7 @@ const FormField = styled.div({
 })
 
 const Contact = ({ children }) => (
-    <section className="section has-background-primary">
+    <section id="contact" className="section has-background-primary">
         <ContactContainer className="container">
             <div className="columns is-centered">
                 <div className="column is-7">

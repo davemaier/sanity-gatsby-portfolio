@@ -14,9 +14,7 @@ const ItemWrapper = styled.div(props => ({
         direction: props.isReversed ? 'rtl' : 'ltr',
     },
     
-    ":first-of-type":{
-        marginTop: "30px"
-    },
+    
 
     ":last-of-type": {
         marginBottom: "30px"
@@ -29,6 +27,7 @@ const ItemText = styled.div({
 })
 
 const StyledBlockContent = styled(BlockContent)({
+    marginTop: "30px",
     'p': {
         marginTop: "10px"
     }

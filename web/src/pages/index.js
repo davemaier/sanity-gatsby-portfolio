@@ -43,7 +43,11 @@ export const query = graphql`
         }
         alt
       }
-      
+
+      headTitleLarge
+      headTitleSmall
+      _rawHeadText
+
       _rawInfoItems(resolveReferences: {maxDepth: 10})
     }
   }
@@ -79,7 +83,7 @@ const IndexPage = props => {
       
         <Hero title={frontPage.heroTitle} subTitle1={frontPage.heroSubtitle1} subTitle2={frontPage.heroSubtitle2} image={frontPage.heroImage}></Hero>
 
-        <Info infoItems={frontPage._rawInfoItems} headItem ={frontPage.headItem}></Info>
+        <Info infoItems={frontPage._rawInfoItems} headItem ={{headTitleLarge: frontPage.headTitleLarge, headTitleSmall: frontPage.headTitleSmall, _rawHeadText: frontPage._rawHeadText}}></Info>
         
 
         <Contact></Contact>

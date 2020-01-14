@@ -1,5 +1,6 @@
 import React from 'react';
 import InfoItem from './info-item';
+import HeadItem from './head-item';
 
 const Info = ({headItem, infoItems}) => {
 
@@ -10,9 +11,8 @@ const Info = ({headItem, infoItems}) => {
         <section className="section">
             <div className={`container has-text-centered`}>
 
-                <div className="">
-                    {headItem && headItem.title}
-                </div>
+                <HeadItem headItem={headItem}/>
+                
 
                 <div style={{ maxWidth: "800px", marginLeft: "auto", marginRight: "auto" }}>
                     {infoItems && infoItems.map((item, index) =>

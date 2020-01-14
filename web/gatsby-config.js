@@ -11,6 +11,7 @@ const isProd = process.env.NODE_ENV === 'production'
 module.exports = {
   plugins: [
     'gatsby-plugin-react-helmet', 
+    'gatsby-plugin-smoothscroll',
     'gatsby-image',
     'gatsby-plugin-sass',
     {

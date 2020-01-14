@@ -30,9 +30,20 @@ export default {
         type: 'figure'
       },
       {
-        title: "Info Head",
-        name: "headItem",
-        type: "infoItem"
+        name: 'headTitleLarge',
+        type: 'string',
+        title: 'Info Head Title Large'
+      },
+      {
+        name: 'headTitleSmall',
+        type: 'string',
+        title: 'Info Head Title Small'
+      },
+      {
+        title: "Info Head Text",
+        name: "headText",
+        type: 'array',
+        of: [{type: 'block'}]
       },
       {
         title: "Info Items",
